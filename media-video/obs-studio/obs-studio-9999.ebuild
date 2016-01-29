@@ -68,6 +68,7 @@ src_configure() {
 		$(cmake-utils_use_disable truetype FREETYPE)
 		$(cmake-utils_use_disable v4l V4L2)
 		-DUNIX_STRUCTURE=1
+		-DOBS_MULTIARCH_SUFFIX=$(sed 's/lib//' <<< $(get_libdir))
 	)
 
 	cmake-utils_src_configure
